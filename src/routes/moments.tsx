@@ -21,19 +21,17 @@ export const Route = createFileRoute("/moments")({
   component: MomentsPage,
 });
 
-type Item =
-  | { type: "image"; src: string; title: string; text: string }
-  | { type: "video"; src: string; title: string; text: string };
+type Item = { type: "image" | "video"; src: string };
 
 const moments: Item[] = [
-  { type: "image", src: p1.url, title: "Entre potes", text: "Les selfies improvisés et les sourires complices." },
-  { type: "image", src: p2.url, title: "Sortie ensemble", text: "Une belle journée à se balader tous les deux." },
-  { type: "image", src: p3.url, title: "Le carnaval", text: "Déguisée et prête à faire la fête !" },
-  { type: "video", src: v1.url, title: "Souvenir vidéo", text: "Un petit moment capturé en vidéo." },
-  { type: "image", src: p4.url, title: "Les bonbons", text: "Le bonheur sucré des goûters partagés." },
-  { type: "image", src: p5.url, title: "La boum", text: "Lumières, musique et amis : la meilleure soirée." },
-  { type: "video", src: v2.url, title: "Encore un moment", text: "Une autre vidéo souvenir de l'année." },
-  { type: "image", src: p6.url, title: "Les copains", text: "Les fous rires en pyjama party." },
+  { type: "image", src: p1.url },
+  { type: "image", src: p2.url },
+  { type: "image", src: p3.url },
+  { type: "video", src: v1.url },
+  { type: "image", src: p4.url },
+  { type: "image", src: p5.url },
+  { type: "video", src: v2.url },
+  { type: "image", src: p6.url },
 ];
 
 function MomentsPage() {
@@ -70,8 +68,8 @@ function MomentsPage() {
 
         <section className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {moments.map((m, i) => (
-            <article
-              key={m.title}
+            <div
+              key={i}
               className="group overflow-hidden rounded-3xl border border-border bg-card transition-all hover:-translate-y-1"
               style={{
                 boxShadow: "var(--shadow-card)",
@@ -82,7 +80,7 @@ function MomentsPage() {
                 {m.type === "image" ? (
                   <img
                     src={m.src}
-                    alt={m.title}
+                    alt="Souvenir"
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -96,11 +94,7 @@ function MomentsPage() {
                   />
                 )}
               </div>
-              <div className="p-6">
-                <h2 className="text-3xl text-foreground">{m.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{m.text}</p>
-              </div>
-            </article>
+            </div>
           ))}
         </section>
 
