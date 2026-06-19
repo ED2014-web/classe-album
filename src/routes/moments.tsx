@@ -11,10 +11,10 @@ import v2 from "@/assets/souvenirs/VIDEO-2026-02-13-21-39-27_3.mp4.asset.json";
 export const Route = createFileRoute("/moments")({
   head: () => ({
     meta: [
-      { title: "Les moments de la classe — 6e" },
-      { name: "description", content: "Une galerie de souvenirs de notre année en 6e : la classe, la cour, les amis, et tout le reste." },
-      { property: "og:title", content: "Les moments de la classe — 6e" },
-      { property: "og:description", content: "Une galerie de souvenirs de notre année en 6e." },
+      { title: "Les moments de la classe — 6ème 2" },
+      { name: "description", content: "Une galerie de souvenirs de notre année en 6ème 2 : la classe, la cour, les amis, et tout le reste." },
+      { property: "og:title", content: "Les moments de la classe — 6ème 2" },
+      { property: "og:description", content: "Une galerie de souvenirs de notre année en 6ème 2." },
       { property: "og:image", content: p1.url },
     ],
   }),
@@ -64,7 +64,7 @@ function MomentsPage() {
             Les moments de la classe
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-lg text-muted-foreground">
-            Quelques images qui racontent notre année en 6e, à feuilleter comme un album.
+            Quelques images qui racontent notre année en 6ème 2, à feuilleter comme un album.
           </p>
         </header>
 
