@@ -69,6 +69,7 @@ function MomentsPage() {
         <section className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {moments.map((m, i) => (
             <div
+              key={i}
               className="group overflow-hidden rounded-3xl border border-border bg-card transition-all hover:-translate-y-1"
               style={{
                 boxShadow: "var(--shadow-card)",
