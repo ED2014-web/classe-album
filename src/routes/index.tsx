@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-classe.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,18 +55,6 @@ function Index() {
           </Link>
         </div>
 
-        <div
-          className="mt-16 w-full max-w-3xl overflow-hidden rounded-3xl border border-border bg-card"
-          style={{ boxShadow: "var(--shadow-card)" }}
-        >
-          <img
-            src={heroImg}
-            alt="Illustration aquarelle d'une salle de classe avec tableau et cartables"
-            width={1024}
-            height={1024}
-            className="h-auto w-full"
-          />
-        </div>
       </section>
     </main>
   );
