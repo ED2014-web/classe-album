@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import m1 from "@/assets/moment-1.jpg";
-import m2 from "@/assets/moment-2.jpg";
-import m3 from "@/assets/moment-3.jpg";
-import m4 from "@/assets/moment-4.jpg";
-import m5 from "@/assets/moment-5.jpg";
-import m6 from "@/assets/moment-6.jpg";
+import p1 from "@/assets/souvenirs/6af7184d-32b4-4a79-acff-a06d19288324.JPG.asset.json";
+import p2 from "@/assets/souvenirs/8e1d0bee-348e-4cbc-a122-18ef9257b02e.JPG.asset.json";
+import p3 from "@/assets/souvenirs/PHOTO-2026-02-13-21-29-32.jpg.asset.json";
+import p4 from "@/assets/souvenirs/PHOTO-2026-02-13-21-39-24.jpg.asset.json";
+import p5 from "@/assets/souvenirs/PHOTO-2026-02-13-21-39-28_2.jpg.asset.json";
+import p6 from "@/assets/souvenirs/PHOTO-2026-02-13-21-39-31.jpg.asset.json";
+import v1 from "@/assets/souvenirs/VIDEO-2026-02-13-21-39-26_4.mp4.asset.json";
+import v2 from "@/assets/souvenirs/VIDEO-2026-02-13-21-39-27_3.mp4.asset.json";
 
 export const Route = createFileRoute("/moments")({
   head: () => ({
@@ -13,19 +15,25 @@ export const Route = createFileRoute("/moments")({
       { name: "description", content: "Une galerie de souvenirs de notre année en 6e : la classe, la cour, les amis, et tout le reste." },
       { property: "og:title", content: "Les moments de la classe — 6e" },
       { property: "og:description", content: "Une galerie de souvenirs de notre année en 6e." },
-      { property: "og:image", content: m4 },
+      { property: "og:image", content: p1.url },
     ],
   }),
   component: MomentsPage,
 });
 
-const moments = [
-  { src: m1, title: "Les cours", text: "Maths, français, histoire... on a appris plein de nouvelles choses." },
-  { src: m2, title: "La cour", text: "Les récrés sous les arbres, à discuter et à courir partout." },
-  { src: m3, title: "Le tableau", text: "Les leçons, les schémas, et parfois quelques petits dessins en cachette." },
-  { src: m4, title: "Les amis", text: "Les nouvelles rencontres et les fous rires partagés jusqu'au soir." },
-  { src: m5, title: "Le cahier", text: "Les notes, les souvenirs, et les petites choses glissées entre les pages." },
-  { src: m6, title: "Le CDI", text: "Les heures passées à lire, à chercher, à découvrir." },
+type Item =
+  | { type: "image"; src: string; title: string; text: string }
+  | { type: "video"; src: string; title: string; text: string };
+
+const moments: Item[] = [
+  { type: "image", src: p1.url, title: "Entre potes", text: "Les selfies improvisés et les sourires complices." },
+  { type: "image", src: p2.url, title: "Sortie ensemble", text: "Une belle journée à se balader tous les deux." },
+  { type: "image", src: p3.url, title: "Le carnaval", text: "Déguisée et prête à faire la fête !" },
+  { type: "video", src: v1.url, title: "Souvenir vidéo", text: "Un petit moment capturé en vidéo." },
+  { type: "image", src: p4.url, title: "Les bonbons", text: "Le bonheur sucré des goûters partagés." },
+  { type: "image", src: p5.url, title: "La boum", text: "Lumières, musique et amis : la meilleure soirée." },
+  { type: "video", src: v2.url, title: "Encore un moment", text: "Une autre vidéo souvenir de l'année." },
+  { type: "image", src: p6.url, title: "Les copains", text: "Les fous rires en pyjama party." },
 ];
 
 function MomentsPage() {
@@ -71,14 +79,22 @@ function MomentsPage() {
               }}
             >
               <div className="aspect-square overflow-hidden bg-muted">
-                <img
-                  src={m.src}
-                  alt={m.title}
-                  width={1024}
-                  height={1024}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {m.type === "image" ? (
+                  <img
+                    src={m.src}
+                    alt={m.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <video
+                    src={m.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-cover"
+                  />
+                )}
               </div>
               <div className="p-6">
                 <h2 className="text-3xl text-foreground">{m.title}</h2>
