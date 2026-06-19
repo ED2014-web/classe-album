@@ -4,10 +4,10 @@ import { Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Merci pour cette première année en 6e" },
-      { name: "description", content: "Un petit site souvenir pour célébrer notre première année au collège, en 6e." },
-      { property: "og:title", content: "Merci pour cette première année en 6e" },
-      { property: "og:description", content: "Un petit site souvenir pour célébrer notre première année au collège, en 6e." },
+      { title: "Merci pour cette première année en 6ème 2" },
+      { name: "description", content: "Un petit site souvenir pour célébrer notre première année au collège, en 6ème 2." },
+      { property: "og:title", content: "Merci pour cette première année en 6ème 2" },
+      { property: "og:description", content: "Un petit site souvenir pour célébrer notre première année au collège, en 6ème 2." },
     ],
   }),
   component: Index,
@@ -32,12 +32,12 @@ function Index() {
 
       <section className="relative mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 py-20 text-center">
         <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-sm font-semibold text-muted-foreground backdrop-blur">
-          ✨ Année scolaire — souvenirs de 6e
+          ✨ Année scolaire — souvenirs de 6e2
         </span>
 
         <h1 className="text-balance text-6xl leading-[0.95] text-foreground sm:text-7xl md:text-8xl">
           Merci pour cette
-          <span className="block text-primary"> première année en 6e</span>
+          <span className="block text-primary"> première année en 6ème 2</span>
         </h1>
 
         <p className="mt-8 max-w-2xl text-pretty text-lg text-muted-foreground sm:text-xl">
