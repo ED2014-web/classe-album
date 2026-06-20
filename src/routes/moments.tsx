@@ -7,6 +7,12 @@ import p5 from "@/assets/souvenirs/PHOTO-2026-02-13-21-39-28_2.jpg.asset.json";
 import p6 from "@/assets/souvenirs/PHOTO-2026-02-13-21-39-31.jpg.asset.json";
 import v1 from "@/assets/souvenirs/VIDEO-2026-02-13-21-39-26_4.mp4.asset.json";
 import v2 from "@/assets/souvenirs/VIDEO-2026-02-13-21-39-27_3.mp4.asset.json";
+import p7 from "@/assets/souvenirs/PHOTO-2025-12-24-18-44-39.jpg.asset.json";
+import p8 from "@/assets/souvenirs/PHOTO-2025-12-21-14-17-56.jpg.asset.json";
+import p9 from "@/assets/souvenirs/PHOTO-2026-01-04-17-58-40.jpg.asset.json";
+import p10 from "@/assets/souvenirs/PHOTO-2025-12-31-22-13-19.jpg.asset.json";
+import p11 from "@/assets/souvenirs/PHOTO-2025-12-24-19-30-21.jpg.asset.json";
+import p12 from "@/assets/souvenirs/PHOTO-2026-02-13-21-28-49.jpg.asset.json";
 
 export const Route = createFileRoute("/moments")({
   head: () => ({
@@ -32,6 +38,12 @@ const moments: Item[] = [
   { type: "image", src: p5.url },
   { type: "video", src: v2.url },
   { type: "image", src: p6.url },
+  { type: "image", src: p7.url },
+  { type: "image", src: p8.url },
+  { type: "image", src: p9.url },
+  { type: "image", src: p10.url },
+  { type: "image", src: p11.url },
+  { type: "image", src: p12.url },
 ];
 
 function MomentsPage() {
