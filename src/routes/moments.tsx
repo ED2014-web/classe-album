@@ -100,7 +100,7 @@ function MomentsPage() {
 
         <footer className="mt-20 text-center">
           <p className="font-display text-3xl text-primary">Merci pour cette année ❤</p>
-          <p className="mt-2 text-sm text-muted-foreground">À bientôt en 5e !</p>
+          <p className="mt-2 text-sm text-muted-foreground">{"\n"}</p>
         </footer>
       </div>
     </main>
