@@ -13,6 +13,9 @@ import p9 from "@/assets/souvenirs/PHOTO-2026-01-04-17-58-40.jpg.asset.json";
 import p10 from "@/assets/souvenirs/PHOTO-2025-12-31-22-13-19.jpg.asset.json";
 import p11 from "@/assets/souvenirs/PHOTO-2025-12-24-19-30-21.jpg.asset.json";
 import p12 from "@/assets/souvenirs/PHOTO-2026-02-13-21-28-49.jpg.asset.json";
+import p13 from "@/assets/souvenirs/IMG_1537.jpg.asset.json";
+import p14 from "@/assets/souvenirs/IMG_2530.jpg.asset.json";
+import p15 from "@/assets/souvenirs/IMG_2545.jpg.asset.json";
 
 export const Route = createFileRoute("/moments")({
   head: () => ({
@@ -44,6 +47,9 @@ const moments: Item[] = [
   { type: "image", src: p10.url },
   { type: "image", src: p11.url },
   { type: "image", src: p12.url },
+  { type: "image", src: p13.url },
+  { type: "image", src: p14.url },
+  { type: "image", src: p15.url },
 ];
 
 function MomentsPage() {
